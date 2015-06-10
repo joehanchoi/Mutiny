@@ -16,10 +16,10 @@
                     <ul>
                         <li class="side-header">Published</li>
                         <li class="text-muted"><time itemprop="datePublished" datetime="{{date format='YYYY-MM-DD'}}">{{date format='DD MMM YYYY'}}</time></li>
-                        
+
                         {{#foreach tags}}
                             {{#if @first}}
-                                <li class="side-header" class="text-muted">Tags</li>        
+                                <li class="side-header" class="text-muted">Tags</li>
                             {{/if}}
                             <li class="text-muted"><a href="{{url}}">{{name}}</a></li>
                         {{/foreach}}
@@ -37,6 +37,11 @@
                             </span>
                         </p>
                     </section>
+                    {{#if image}}
+                        <section class="cover-image">
+                            <img src={{image}} style="max-width: 100%; height: auto">
+                        </section>
+                    {{/if}}
                     <section itemprop="articleBody text">
                         <p>{{excerpt}}&hellip;</p>
                     </section>
@@ -45,7 +50,7 @@
                             <a href="{{url}}">Read More</a>
                         </p>
                         <div itemprop="author" itemscope itemtype="http://schema.org/Person" class="hidden">
-                            <span rel="author" itemprop="url name">Max Holland</span> 
+                            <span rel="author" itemprop="url name">Max Holland</span>
                         </div>
                     </footer>
                 </div>
