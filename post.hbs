@@ -37,6 +37,8 @@
                         <section class="cover-image">
                             <img src={{@blog.cover}} style="max-width: 100%; height: auto">
                         </section>
+                    {{else}}
+                        No image
                     {{/if}}
                     <section itemprop="articleBody text">
                     {{content}}
