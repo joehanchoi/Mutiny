@@ -87,6 +87,10 @@ a:hover {
   box-shadow: none;
 }
 
+.cover-image {
+	margin-bottom: 40px;
+}
+
 .fin {
 	text-align: center;
 	font-size: 25px;
