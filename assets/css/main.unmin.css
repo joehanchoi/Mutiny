@@ -172,7 +172,7 @@ a:hover {
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
-  .post, .comments, .footer {
-    padding: 120px 0;
+  .post, .comments {
+    padding: 60px 0;
   }
 }
