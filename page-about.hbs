@@ -1,0 +1,27 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+<section id="post-container" role="main">
+ {{#post}}
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8">
+                    <header>
+                        <h1 itemprop="name headline"><a href="{{url}}">{{{title}}}</a></h1>
+                    </header>
+                    <section itemprop="articleBody text">
+                    {{content}}
+                    </section>
+                </div>
+            </div>
+        </div>
+    </article>
+    {{/post}}
+</section>
+
+{{! Comments include }}
+<!--{{> comments}}-->
+<div class="fin">◆</div>
