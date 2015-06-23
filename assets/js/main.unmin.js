@@ -20,7 +20,7 @@
             };
         }
 
-        return app._isSafari; 
+        return app._isSafari;
     }
 
 
@@ -54,14 +54,14 @@
 
 
     app.getTag = function(elem){
-        
+
         if(app._searchedTag === null){
             if(app.elemExists(elem)){
                 var url = window.location.href;
                 var splitURL = url.split('tag');
                 var tag = app.replaceAll(splitURL[1],'/','');
                 var tagFirstChar;
-                
+
                 tag = app.replaceAll(tag,'-',' ');
                 tagFirstChar = tag.charAt(0).toUpperCase();
                 tag = tagFirstChar + tag.substring(1,tag.length);
@@ -74,18 +74,18 @@
     }
 
 
-    app.aTagWrap = function(elem,elemClass,exclude){        
+    app.aTagWrap = function(elem,elemClass,exclude){
         if(app.elemExists(elem)){
             var imgs = $(elem);
             if(imgs.length > 0){
                 imgs.each(function(){
                     var $this = $(this);
                     var imgLink = $this.attr('src');
-                    
+
                     if(!$this.hasClass(exclude)){
                         var html = '';
                         html = "<a class='"+elemClass+"' href='"+ imgLink +"'></a>";
-                        
+
                         $this.wrap(html);
                     }
                 });
@@ -126,7 +126,7 @@
 
             postContainer.addClass('show-posts');
             $('.post').addClass('show-posts');
-        });   
+        });
     }
 
     var initInfiniteScroll = function(pageNumber,nextPage,nanobar){
@@ -140,8 +140,8 @@
                 maxPageNumber = parseInt(splitPageNumber[1]);
                 getNextPage = parseInt(getNextPage);
 
-                
-                
+
+
                 $('#post-container').infinitescroll({
                     navSelector  : ".pagination",
                     // selector for the paged navigation (it will be hidden)
@@ -154,9 +154,9 @@
                                     img: 'http://static.tumblr.com/dbek3sy/gUImt1cjo/ajax-loader.gif',
                                     //msgText:"Loading new posts.."
                                 }
-                    
+
                 }, function (newElems) {
-                    nanobar.go( 40 );    
+                    nanobar.go( 40 );
 
                     var elem = $(newElems);
                     var elemID = elem.attr('id');
@@ -165,19 +165,19 @@
 
                     //update pagination
                     getNextPage = getNextPage + 1;
-                    
-                    nanobar.go( 80 );                    
+
+                    nanobar.go( 80 );
 
                     if(getNextPage > maxPageNumber){
                         $(window).unbind('.infscr');
                         $('.pagination').remove();
                     }else{
-                        nextPageElem.attr('href','/page/'+getNextPage+'/'); 
+                        nextPageElem.attr('href','/page/'+getNextPage+'/');
                     }
-                        
-                    nanobar.go( 100 );   
 
-                    $(newElems).addClass('show-posts');                                     
+                    nanobar.go( 100 );
+
+                    $(newElems).addClass('show-posts');
 
                 });
             }
@@ -197,22 +197,6 @@
 
     var navBG;
 
-	//Headroom
-	if(app.elemExists('.navbar')){
-		// grab an element
-		var myElement = document.querySelector('.navbar');
-		// construct an instance of Headroom, passing the element
-		var headroom  = new Headroom(myElement);
-		// initialise
-		headroom.init(); 
-
-        navBG = $('.navbar').css('backgroundColor');
-
-        navBG = hexc(navBG);
-	};
-
-    
-	
     //Check if the images are loaded
 	if(app.elemExists('.post')){
         initImagesLoaded('#post-container','.post');
@@ -236,7 +220,7 @@
         };
 
         var nanobar = new Nanobar( options );
-        
+
 
         initInfiniteScroll('.page-number','.older-posts',nanobar);
     };

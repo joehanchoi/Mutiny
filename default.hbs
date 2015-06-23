@@ -17,8 +17,8 @@
 
     {{! Styles'n'Scripts }}
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    
-    {{! Include for changeable bootstrap theme }} 
+
+    {{! Include for changeable bootstrap theme }}
     {{> bootstrap-theme }}
 
     <link rel="stylesheet" type="text/css" href="{{asset "css/main.css"}}" />
@@ -26,28 +26,40 @@
        <!-- Google Authorship and Publisher Markup -->
     {{> google-authorship}}
 
-    
+
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.min.js"></script>
 
     {{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-64160327-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    {{! JQuery From Google CDN}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 </head>
 <body itemscope itemtype="http://schema.org/Blog">
     <!--[if lt IE 10]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    {{! Navbar include }}    
+    {{! Navbar include }}
     {{> navbar}}
 
 
     {{! Everything else gets inserted here }}
     {{{body}}}
 
-    {{! Footer include }}    
+    {{! Footer include }}
     {{> footer}}
 
     {{! Ghost outputs important scripts and data with this tag }}
-    {{ghost_foot}}
+    <!-- {{ghost_foot}} -->
 
     {{! The main JavaScript file for Casper }}
     <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
@@ -59,7 +71,7 @@
     <script type="text/javascript" src="{{asset "js/nanobar.min.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/main.js"}}"></script>
 
-    {{! Google analytics include }}    
+    {{! Google analytics include }}
     {{> google-analytics}}
 
 </body>
