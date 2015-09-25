@@ -26,6 +26,9 @@
     {{! Use Fluidbox CSS}}
     <link rel="stylesheet" type="text/css" href="{{asset "css/fluidbox.css"}}">
 
+    {{! Bigfoot CSS}}
+    <link rel="stylesheet" type="text/css" href="{{asset "css/bigfoot-default.css"}}">
+
     <!-- Google Authorship and Publisher Markup -->
     {{> google-authorship}}
 
@@ -64,6 +67,21 @@
     <script type="text/javascript" src="{{asset "js/infinitescroll.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/nanobar.min.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/main.js"}}"></script>
+
+    {{! Bigfoot Javascript Files}}
+    <script type="text/javascript" src="{{asset "js/bigfoot.js"}}"></script>
+    <script type="{{asset "text/javascript"}}">
+        $.bigfoot();
+    </script>
+    <script type="text/javascript">
+        var bigfoot = $.bigfoot(
+            {
+                deleteOnUnhover: false,
+                preventPageScroll: false,
+                hoverDelay: 250
+            }
+        );
+    </script>
 
     {{! Google analytics include }}
     {{> google-analytics}}
