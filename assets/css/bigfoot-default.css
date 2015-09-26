@@ -247,3 +247,7 @@
 .is-positioned-top .bigfoot-footnote__tooltip {
   bottom: -0.65em;
 }
+
+p.bigfoot {
+  margin: 0px
+}
