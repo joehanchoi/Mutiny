@@ -116,13 +116,7 @@
             $('.post').fitVids();
 
             //Convert images
-            app.aTagWrap('.post img','fluid-popup','no-fluid');
-
-            //Fluidbox
-            if(app.elemExists('.fluid-popup')){
-                $('.fluid-popup').fluidbox();
-            }
-
+            app.aTagWrap('.post img');
 
             postContainer.addClass('show-posts');
             $('.post').addClass('show-posts');
