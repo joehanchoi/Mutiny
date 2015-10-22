@@ -73,28 +73,6 @@
         return app._searchedTag;
     }
 
-
-    app.aTagWrap = function(elem,elemClass,exclude){
-        if(app.elemExists(elem)){
-            var imgs = $(elem);
-            if(imgs.length > 0){
-                imgs.each(function(){
-                    var $this = $(this);
-                    var imgLink = $this.attr('src');
-
-                    if(!$this.hasClass(exclude)){
-                        var html = '';
-                        html = "<a class='"+elemClass+"' href='"+ imgLink +"'></a>";
-
-                        $this.wrap(html);
-                    }
-                });
-
-            };
-        };
-    }
-
-
     window.app = app;
 
 })(window, document);
@@ -114,9 +92,6 @@
 
             //Fitvid
             $('.post').fitVids();
-
-            //Convert images
-            app.aTagWrap('.post img');
 
             postContainer.addClass('show-posts');
             $('.post').addClass('show-posts');
