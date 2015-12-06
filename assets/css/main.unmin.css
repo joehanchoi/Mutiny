@@ -148,3 +148,21 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
 /*     padding: 60px 0; */
 /*   } */
 /* } */
+
+
+/* Pagination Navigation Styling */
+.pagination {
+  width: 100%;
+}
+
+.newer-posts, .older-posts {
+  position:absolute;
+}
+
+.newer-posts {
+  left: 15px;
+}
+
+.older-posts {
+  right: 15px;
+}
