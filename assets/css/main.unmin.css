@@ -1,13 +1,3 @@
-#post-container {
-  opacity: 0;
-  transition: all 0.2s linear;
-}
-
-.show-posts {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=1);
-  opacity: 1 !important;
-}
-
 a {
   transition: 0.25s;
   text-decoration: none;
