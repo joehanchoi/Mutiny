@@ -82,22 +82,6 @@
 (function($) {
     'use strict';
     var app = window.app;
-    var initImagesLoaded = function(container,elem){
-
-        var posts = document.querySelectorAll(elem);
-
-        imagesLoaded( posts, function() {
-
-            var postContainer = $(container);
-
-            //Fitvid
-            $('.post').fitVids();
-
-            postContainer.addClass('show-posts');
-            $('.post').addClass('show-posts');
-        });
-    }
-
         function hexc(colorval) {
             var parts = colorval.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
             delete(parts[0]);
