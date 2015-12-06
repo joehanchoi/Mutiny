@@ -112,11 +112,6 @@
 
     var navBG;
 
-    //Check if the images are loaded
-	if(app.elemExists('.post')){
-        initImagesLoaded('#post-container','.post');
-	};
-
     //Get the tag searched for
     if(app.getTag('#tag-search') !== null){
         $('#tag-search').html(app.getTag('#tag-search'));
