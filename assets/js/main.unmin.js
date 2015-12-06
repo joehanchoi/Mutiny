@@ -80,7 +80,9 @@
 
 
 (function($) {
+
     'use strict';
+
     var $document = $(document);
 
     $document.ready(function () {
@@ -90,26 +92,9 @@
 
     });
 
-    function hexc(colorval) {
-        var parts = colorval.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
-        delete(parts[0]);
-        for (var i = 1; i <= 3; ++i) {
-    	    parts[i] = parseInt(parts[i]).toString(16);
-	    if (parts[i].length == 1) parts[i] = '0' + parts[i];
-        }
-        return '#' + parts.join('');
-    }
-
-    //Check what page, check if link is in navbar, if true set to active.
-
-    var navBG;
-
     //Get the tag searched for
     if(app.getTag('#tag-search') !== null){
         $('#tag-search').html(app.getTag('#tag-search'));
     };
 
 })(jQuery);
-
-
-
