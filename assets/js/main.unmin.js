@@ -98,60 +98,6 @@
         });
     }
 
-    var initInfiniteScroll = function(pageNumber,nextPage,nanobar){
-        var maxPageNumber = $(pageNumber);
-        var nextPageElem = $(nextPage);
-
-            if(maxPageNumber.length > 0 && nextPageElem.length > 0){
-                var splitPageNumber = maxPageNumber.html().split('of');
-                var getNextPage = nextPageElem.attr('href').slice(-2).replace('/','');
-
-                maxPageNumber = parseInt(splitPageNumber[1]);
-                getNextPage = parseInt(getNextPage);
-
-
-
-                $('#post-container').infinitescroll({
-                    navSelector  : ".pagination",
-                    // selector for the paged navigation (it will be hidden)
-                    nextSelector : ".pagination .older-posts",
-                    // selector for the NEXT link (to page 2)
-                    itemSelector : ".post",
-                    loading: {
-                                    finishedMsg: "No more posts.",
-                                    //http://static.tumblr.com/dbek3sy/pX1lrx8xv/ajax-loader.gif
-                                    img: 'http://static.tumblr.com/dbek3sy/gUImt1cjo/ajax-loader.gif',
-                                    //msgText:"Loading new posts.."
-                                }
-
-                }, function (newElems) {
-                    nanobar.go( 40 );
-
-                    var elem = $(newElems);
-                    var elemID = elem.attr('id');
-
-                    nanobar.go( 60 );
-
-                    //update pagination
-                    getNextPage = getNextPage + 1;
-
-                    nanobar.go( 80 );
-
-                    if(getNextPage > maxPageNumber){
-                        $(window).unbind('.infscr');
-                        $('.pagination').remove();
-                    }else{
-                        nextPageElem.attr('href','/page/'+getNextPage+'/');
-                    }
-
-                    nanobar.go( 100 );
-
-                    $(newElems).addClass('show-posts');
-
-                });
-            }
-        }
-
         function hexc(colorval) {
             var parts = colorval.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
             delete(parts[0]);
@@ -175,25 +121,6 @@
     if(app.getTag('#tag-search') !== null){
         $('#tag-search').html(app.getTag('#tag-search'));
     };
-
-    //Setup infinite scroll
-    if(app.elemExists('.page-number','.older-posts')){
-        var options = {
-            bg: navBG,
-
-            // leave target blank for global nanobar
-            target: '',
-
-            // id for new nanobar
-            id: 'mynano'
-        };
-
-        var nanobar = new Nanobar( options );
-
-
-        initInfiniteScroll('.page-number','.older-posts',nanobar);
-    };
-
 
 })(jQuery);
 
