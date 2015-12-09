@@ -83,6 +83,7 @@ a:hover {
   margin-right: 5px;
 }
 .mobile-side a {
+  font-weight: 700;
   text-decoration: none;
 }
 .mobile-side a:not(:hover) {
