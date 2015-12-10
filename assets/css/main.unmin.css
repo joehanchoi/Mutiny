@@ -141,15 +141,20 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
   width: 100%;
   text-align: center;
 }
-
 .newer-posts, .older-posts {
   position:absolute;
 }
-
 .newer-posts {
   left: 15px;
 }
-
 .older-posts {
   right: 15px;
+}
+
+/* Don't wrap code blocks */
+pre {
+  word-wrap: initial;
+}
+pre code{
+  white-space: pre;
 }
