@@ -140,16 +140,11 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
 /* Pagination Navigation Styling */
 .pagination {
   width: 100%;
-  text-align: center;
+  margin: 0 0 20px;
 }
-.newer-posts, .older-posts {
-  position:absolute;
-}
-.newer-posts {
-  left: 15px;
-}
-.older-posts {
-  right: 15px;
+
+.pagination > .pager {
+  margin: initial;
 }
 
 /* Don't wrap code blocks */
