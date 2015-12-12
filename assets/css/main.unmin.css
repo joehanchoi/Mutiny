@@ -63,7 +63,7 @@ a:hover {
   text-decoration: none;
 }
 .post header h1 a:not(:hover), .post header h2 a:not(:hover) {
-  color: inherit;
+  color: #2780e3;
 }
 .post section {
   margin-bottom: 20px;
