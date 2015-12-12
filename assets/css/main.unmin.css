@@ -64,7 +64,7 @@ a:hover {
   font-weight: 700;
 }
 .post header h1 a:not(:hover), .post header h2 a:not(:hover) {
-  color: #2780e3;
+  color: inherit;
 }
 .post section {
   margin-bottom: 20px;
