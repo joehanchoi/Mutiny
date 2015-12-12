@@ -61,6 +61,7 @@ a:hover {
 }
 .post header h1 a, .post header h2 a {
   text-decoration: none;
+  font-weight: 700;
 }
 .post header h1 a:not(:hover), .post header h2 a:not(:hover) {
   color: #2780e3;
