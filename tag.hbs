@@ -22,22 +22,12 @@
         <div class="container">
             <div class="row">
                 <aside class="col-sm-2 hidden-xs">
-                    <ul>
-                        <li class="side-header">Published</li>
-                        <li class="text-muted"><time itemprop="datePublished" datetime="{{date format='YYYY-MM-DD'}}">{{date format='DD MMM YYYY'}}</time></li>
-                        
-                        <li class="side-header" class="text-muted">Tags</li>
-                        
-                        {{#foreach tags}}
-                            <li class="text-muted"><a href="{{url}}">{{name}}</a></li>
-                        {{/foreach}}
-                    </ul>
                 </aside>
                 <div class="col-sm-8">
                     <header>
                         <h1 itemprop="name headline"><a href="{{url}}">{{{title}}}</a></h1>
                     </header>
-                    <section class="visible-xs-block mobile-side">
+                    <section class="mobile-side">
                         <p>
                             <time datetime="{{date format='YYYY-MM-DD'}}">{{date format='DD MMM YYYY'}}</time>
                             <span class="text-muted">
@@ -46,16 +36,8 @@
                         </p>
                     </section>
                     <section itemprop="articleBody text">
-                        <p>{{excerpt}}&hellip;</p>
+                        <p>{{content}}</p>
                     </section>
-                    <footer>
-                        <p>
-                            <a href="{{url}}">Read More</a>
-                        </p>
-                        <div itemprop="author" itemscope itemtype="http://schema.org/Person" class="hidden">
-                            <span rel="author" itemprop="url name">Max Holland</span> 
-                        </div>
-                    </footer>
                 </div>
             </div>
         </div>
